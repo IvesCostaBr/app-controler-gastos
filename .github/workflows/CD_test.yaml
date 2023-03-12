@@ -1,0 +1,17 @@
+name: CD Testing pipeliine
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Deploy_Company_Service:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+    - uses: 'actions/checkout@v3'
+
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
