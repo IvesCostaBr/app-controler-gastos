@@ -15,3 +15,16 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+
+
+    - id: 'secrets'
+      uses: 'google-github-actions/get-secretmanager-secrets@v1'
+      with:
+        secrets: |-
+          ip_machine_dev:380863485860/secrets/wtm-international-ip-dev
+          environment:380863485860/secrets/wtm-international-secret-key-dev
+          secret_key:380863485860/secrets/wtm-international-user-dev
+
+    - name: Run Teests
+      run: |
+        sudo bash echo "${{ steps.secrets.outputs.ip_machine_dev }}"
