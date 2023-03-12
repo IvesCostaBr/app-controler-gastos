@@ -27,4 +27,4 @@ jobs:
 
     - name: Run Teests
       run: |
-        sudo bash echo "${{ steps.secrets.outputs.ip_machine_dev }}"
+        echo '${{ steps.secrets.outputs.ip_machine_dev }}'
