@@ -21,9 +21,9 @@ jobs:
       uses: 'google-github-actions/get-secretmanager-secrets@v1'
       with:
         secrets: |-
-          ip_machine_dev:380863485860/secrets/wtm-international-ip-dev
-          environment:380863485860/secrets/wtm-international-secret-key-dev
-          secret_key:380863485860/secrets/wtm-international-user-dev
+          ip_machine_dev:projects/380863485860/secrets/wtm-international-ip-dev
+          environment:projects/380863485860/secrets/wtm-international-secret-key-dev
+          secret_key:projects/380863485860/secrets/wtm-international-user-dev
 
     - name: Run Teests
       run: |
